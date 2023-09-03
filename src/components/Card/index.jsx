@@ -1,8 +1,8 @@
-import React from 'react'
+import './styles.css'
 
 const Card = () => {
     return (
-        <div>
+        <div className="Card">
             <img src='https://rickandmortyapi.com/api/character/avatar/2.jpeg' />
             <h3>Name character</h3>
             <div>

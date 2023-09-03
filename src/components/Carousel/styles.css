@@ -1,0 +1,30 @@
+.Carousel {
+    width: 100%;
+    border: 1px solid #ccc;
+    scroll-behavior: smooth;
+    overflow-x: scroll;
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 1rem;
+    scroll-snap-type: x mandatory;
+    scroll-snap-align: start;
+    border-radius: 6px;
+}
+
+.Carousel::-webkit-scrollbar {
+    display: none;
+}
+
+.Carousel {
+    -ms-overflow-style: none;
+    /* IE and Edge */
+    scrollbar-width: none;
+    /* Firefox */
+}
+
+.Carousel img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    object-position: center;
+}

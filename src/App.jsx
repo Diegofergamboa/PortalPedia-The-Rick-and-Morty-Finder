@@ -1,12 +1,15 @@
 import './App.css'
-import { Card } from './component'
+import { Card } from './components/Card'
+import { Carousel } from './components/Carousel'
+import { InputSearch } from './components/InputSearch'
 
 function App() {
   return (
     <>
-      <div>
-        <input placeholder='Write your characters' />
+      <div className='App'>
+        <InputSearch></InputSearch>
         <Card></Card>
+        <Carousel></Carousel>
       </div>
     </>
   )

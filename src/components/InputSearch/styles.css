@@ -1,0 +1,18 @@
+.InputSearch {
+    padding: 10px 15px;
+    border-radius: 5px;
+    background-color: #f7f7f7;
+    width: 100%;
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.InputSearch:hover {
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.InputSearch:focus {
+    box-shadow: 0 2px 16px rgba(0, 0, 0, 0.1);
+    transform: scale(1.02);
+}
