@@ -17,3 +17,10 @@
   align-items: center;
   gap: 12px;
 }
+
+.CardContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
