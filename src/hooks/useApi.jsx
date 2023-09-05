@@ -1,5 +1,4 @@
-import React from "react";
-
+import React from 'react'
 
 const useApi = () => {
     const [data, setData] = React.useState([])
@@ -11,12 +10,15 @@ const useApi = () => {
             setLoading(true)
             const urlApi = 'https://rickandmortyapi.com/api/character'
             try {
-                const response = await fetch(`${urlApi}`)
+                const response = await fetch(urlApi)
+                if (!response.ok) {
+                    throw new Error("Failed to fetch data")
+                }
                 const result = await response.json()
-                return (response.ok) && setData(result)
-            } catch (error) {
-                setError(error)
-                console.log(`Error fetching the data with ${error}`)
+                setData(result)
+            } catch (err) {
+                setError(err.message || "An error occurred")  // store only the error message
+                console.log(`Error fetching the data with ${err.message}`)
             } finally {
                 setLoading(false)
             }
@@ -25,15 +27,8 @@ const useApi = () => {
     }, [])
 
     return {
-        data,
-        setData,
-        error,
-        setError,
-        loading,
-        setLoading
+        apiState: { data, loading, error }
     }
-
 }
 
 export { useApi }
-

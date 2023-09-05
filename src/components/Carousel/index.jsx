@@ -1,12 +1,11 @@
 import './styles.css'
 
-const Carousel = () => {
+const Carousel = ({ characters }) => {
     return (
         <div className='Carousel'>
-            <img src='https://rickandmortyapi.com/api/character/avatar/102.jpeg'></img>
-            <img src='https://rickandmortyapi.com/api/character/avatar/20.jpeg'></img>
-            <img src='https://rickandmortyapi.com/api/character/avatar/32.jpeg'></img>
-            <img src='https://rickandmortyapi.com/api/character/avatar/62.jpeg'></img>
+            {characters.map(character => (
+                <img src={character.image} alt={`Image of ${character.name}`} key={character.id} />
+            ))}
         </div>
     )
 }

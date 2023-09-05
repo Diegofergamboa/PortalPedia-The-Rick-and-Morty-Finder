@@ -1,6 +1,13 @@
 import './styles.css'
 
-const Card = () => {
+const Card = ({
+    name,
+    status,
+    specie,
+    origin,
+    location,
+    image
+}) => {
     return (
         <div className="Card">
             <img src='https://rickandmortyapi.com/api/character/avatar/2.jpeg' />
