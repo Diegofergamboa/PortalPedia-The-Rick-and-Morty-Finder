@@ -1,6 +1,6 @@
 import React from 'react'
 
-const useApi = () => {
+const UseApi = () => {
     const [data, setData] = React.useState([])
     const [loading, setLoading] = React.useState(false)
     const [error, setError] = React.useState('')
@@ -31,4 +31,4 @@ const useApi = () => {
     }
 }
 
-export { useApi }
+export { UseApi }

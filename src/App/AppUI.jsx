@@ -16,8 +16,6 @@ function AppUI() {
         <>
             <div className='App'>
                 <InputSearch
-                    charactersSearched
-                    setCharactersSearched
                 />
                 {(error) && <h3>Error charging the data</h3>}
                 {(loading) && <h3>Loading...</h3>}

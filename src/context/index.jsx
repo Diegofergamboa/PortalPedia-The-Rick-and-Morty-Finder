@@ -6,11 +6,24 @@ const Context = React.createContext()
 
 const ContextProvider = ({ children }) => {
 
-    const { apiState } = useApi()
+    const { apiState } = UseApi()
     const { data, loading, error } = apiState
 
-    //const [charactersSearched, setCharactersSearched] = React.useState([])
     const [randomCharacters, setRandomCharacters] = React.useState([])
+    const [characterSearched, setCharacterSearched] = React.useState([])
+
+    const filterCharacters = (inputValue) => {
+        const completeData = []
+        const { apiFilter } = UseApi()
+        const { dataFilter } = apiFilter
+
+
+        const dataObject = dataFilter.results
+        console.log(dataObject)
+        const characterFiltered = dataObject.filter(character => character.name)
+        setCharacterSearched(characterFiltered)
+
+    }
 
     const randomCharactersRender = (array, newLength) => {
         const randomCharactersArray = []
@@ -44,6 +57,8 @@ const ContextProvider = ({ children }) => {
     return (
         <Context.Provider value={{
             randomCharacters,
+            characterSearched,
+            filterCharacters,
             loading,
             error
         }}>
