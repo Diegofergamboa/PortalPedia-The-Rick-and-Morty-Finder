@@ -1,5 +1,5 @@
 import React from 'react'
-import { useApi } from '../hooks/useApi'
+import { UseApi } from '../hooks/useApi'
 
 
 const Context = React.createContext()
