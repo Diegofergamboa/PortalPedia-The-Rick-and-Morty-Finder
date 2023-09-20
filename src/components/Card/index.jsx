@@ -10,14 +10,13 @@ const Card = ({
 }) => {
     return (
         <div className="Card">
-            <img src='https://rickandmortyapi.com/api/character/avatar/2.jpeg' />
-            <h3>Name character</h3>
+            <img src={image} />
+            <h3>{name}</h3>
             <div>
-                <p>Status</p>
-                <p>Species</p>
+                <span>{status}</span> - <span>{specie}</span>
             </div>
-            <p>Origin</p>
-            <p>Location</p>
+            <p>{origin}</p>
+            <p>{location}</p>
         </div>
     )
 }

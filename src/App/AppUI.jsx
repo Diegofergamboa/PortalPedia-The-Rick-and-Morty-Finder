@@ -9,10 +9,9 @@ function AppUI() {
         randomCharacters,
         loading,
         error,
-        filterCharacters
-    } = React.useContext(Context);
-
-
+        characterSearched
+    } = React.useContext(Context)
+    console.log(characterSearched)
     return (
         <>
             <div className='App'>
@@ -22,15 +21,16 @@ function AppUI() {
                 {(loading) && <h3>Loading...</h3>}
                 {!(loading) &&
                     <section className='CardContainer'>
-                        {charactersSearched.map(character => {
-                            <Card
+                        {characterSearched.map((character) => {
+                            return (<Card
+                                key={character.id}
                                 name={character.name}
+                                origin={character.origin.name}
                                 status={character.status}
-                                specie={character.specie}
-                                origin={character.origin}
-                                location={character.location}
+                                specie={character.species}
+                                location={character.location.name}
                                 image={character.image}
-                            ></Card>
+                            ></Card>)
                         })}
                     </section>
                 }
