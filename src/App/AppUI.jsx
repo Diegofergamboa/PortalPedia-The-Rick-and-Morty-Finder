@@ -8,7 +8,8 @@ function AppUI() {
     const {
         randomCharacters,
         loading,
-        error
+        error,
+        filterCharacters
     } = React.useContext(Context);
 
 
@@ -21,7 +22,7 @@ function AppUI() {
                 {(loading) && <h3>Loading...</h3>}
                 {!(loading) &&
                     <section className='CardContainer'>
-                        {randomCharacters.map(character => {
+                        {charactersSearched.map(character => {
                             <Card
                                 name={character.name}
                                 status={character.status}

@@ -17,7 +17,7 @@ const UseApi = () => {
                 const result = await response.json()
                 setData(result)
             } catch (err) {
-                setError(err.message || "An error occurred")  // store only the error message
+                setError(err.message || "An error occurred")
                 console.log(`Error fetching the data with ${err.message}`)
             } finally {
                 setLoading(false)

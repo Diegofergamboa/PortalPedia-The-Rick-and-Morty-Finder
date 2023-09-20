@@ -13,16 +13,10 @@ const ContextProvider = ({ children }) => {
     const [characterSearched, setCharacterSearched] = React.useState([])
 
     const filterCharacters = (inputValue) => {
-        const completeData = []
-        const { apiFilter } = UseApi()
-        const { dataFilter } = apiFilter
-
-
-        const dataObject = dataFilter.results
-        console.log(dataObject)
-        const characterFiltered = dataObject.filter(character => character.name)
-        setCharacterSearched(characterFiltered)
-
+        const characterFiltered = data.results.filter((character) => {
+            return character.name.toLowerCase().includes(inputValue.toLowerCase());
+        });
+        setCharacterSearched(characterFiltered);
     }
 
     const randomCharactersRender = (array, newLength) => {
